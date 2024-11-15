@@ -6,13 +6,13 @@
 /*   By: lumiguel <lumiguel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:40:58 by lumiguel          #+#    #+#             */
-/*   Updated: 2024/11/15 15:55:36 by lumiguel         ###   ########.fr       */
+/*   Updated: 2024/11/15 16:34:45 by lumiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int philo_sleeps(t_philo *philo)
+/* int philo_sleeps(t_philo *philo)
 {
 	size_t time;
 
@@ -36,9 +36,14 @@ int philo_eats(t_philo *philo)
 	size_t time;
 
 	time = get_current_time_in_ms();
+	if (philo->num_times_to_eat != -1 && philo->meals_eaten >= philo->num_times_to_eat)
+		return (0);
+	if(philo->superv->dead_flag == 1)
+		return (1);
 	printf("%ld %d is eating\n", time - philo->start_time ,philo->id);
 	philo->last_meal = time - philo->start_time;
 	philo->meals_eaten++;
 	usleep(philo->time_to_eat * 1000);
 	return (0);
 }
+ */
